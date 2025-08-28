@@ -9,7 +9,8 @@
 <body>
   <h1>Bab 2 - JavaScript (ES6) untuk React</h1>
   <pre id="output"></pre>
-
+</body>
+</html>
   <script type="text/babel">
     const out = document.getElementById("output");
 
@@ -20,34 +21,34 @@
     // let vs var
     var foo = "Belajar ECMAScript 6";
     let bar = "Belajar React";
-    log("var foo: " + foo);
-    log("let bar: " + bar);
+    console.log("var foo: " + foo);
+    console.log("let bar: " + bar);
 
     // const
     const nama = "React";
-    log("const nama: " + nama);
+    console.log("const nama: " + nama);
 
     // template string
     let user = "Valen";
-    log(`Hello, ${user}!`);
+    console.log(`Hello, ${user}!`);
 
     // conditional operator
     let nilai = 80;
     let hasil = nilai > 70 ? "Lulus" : "Gagal";
-    log("Ternary: " + hasil);
+    console.log("Ternary: " + hasil);
 
     // short circuit conditionals
     let isLogin = true;
-    isLogin && log("User sudah login");
+    isLogin && console.log("User sudah login");
 
     // arrow function
     const tambah = (a, b) => a + b;
-    log("Arrow function 2+3 = " + tambah(2, 3));
+    console.log("Arrow function 2+3 = " + tambah(2, 3));
 
     // function sebagai first-class citizen
     function kali(x) { return x * 2; }
     function proses(fn, angka) { return fn(angka); }
-    log("First-class: " + proses(kali, 5));
+    console.log("First-class: " + proses(kali, 5));
 
     // class dan object
     class Person {
@@ -60,42 +61,40 @@
       }
     }
     const p1 = new Person("Jonatan", 20);
-    log(p1.sapa());
+    console.log(p1.sapa());
 
     // destructuring
     const person = { nama: "Stefanus", umur: 22 };
     const { nama: n, umur } = person;
-    log(`Destructuring: ${n}, ${umur}`);
+    console.log(`Destructuring: ${n}, ${umur}`);
 
     // spread operator
     const arr1 = [1, 2, 3];
     const arr2 = [...arr1, 4, 5];
-    log("Spread: " + arr2.join(", "));
+    console.log("Spread: " + arr2.join(", "));
 
     // rest parameter
     function jumlahkan(...angka) {
       return angka.reduce((a, b) => a + b, 0);
     }
-    log("Rest parameter sum: " + jumlahkan(1,2,3,4));
+    console.log("Rest parameter sum: " + jumlahkan(1,2,3,4));
 
     // array method map
     const angka = [1,2,3];
     const kuadrat = angka.map(x => x*x);
-    log("Map kuadrat: " + kuadrat.join(", "));
+    console.log("Map kuadrat: " + kuadrat.join(", "));
 
     // Promise
     const getData = () => new Promise(resolve => resolve("Selesai"));
-    getData().then(res => log("Promise: " + res));
+    getData().then(res => console.log("Promise: " + res));
 
     // async/await
     async function loadData() {
       const data = await getData();
-      log("Async/Await: " + data);
+      console.log("Async/Await: " + data);
     }
     loadData();
 
     // module (contoh sederhana)
-    log("Module: biasanya pakai export/import antar file (tidak ditunjukkan di sini)");
+    console.log("Module: biasanya pakai export/import antar file (tidak ditunjukkan di sini)");
   </script>
-</body>
-</html>

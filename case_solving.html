@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="case_solving.js"></script>
+    <title>Belajar Js</title>
+    <style>
+        body{
+            margin: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 >Belajar JavaScript</h1>
+    <div id="p"></div>
+    <h3>Multiple and Divide result</h3>
+    <form>
+        1st Number : <input type="text" id="first"><br>
+        2nd number : <input type="text" id="second"><br>
+    </form><br>
+    <input type="button" onclick="Multiple()" value="Multiple"></input>
+    <input type="button" onclick="Divide()" value="Divide"></input>
+    <p>The Result is : </p>
+    <span id="result"></span>
+
+    <h3>Is the number a multiple of 3 or 7?</h3>
+    Number : <input type="text" id="number"><br><br>
+    <input type="button" onclick="Check()" value="Check">
+    <p>The Result is : </p><span id="truth"></span>
+
+    <h3>Check if Two Integers are in Range 50-99</h3>
+    Number : <input type="text" id="range_num"><br><br>
+    <input type="button" onclick="range()" value="Check">
+    <p>The Result is : </p><span id="result_range"></span>
+
+    <h3>Find Larger Number in Range 40-60</h3>
+    1st Number : <input type="text" id="large_range1"><br>
+    2nd Number : <input type="text" id="large_range2"><br><br>
+    <input type="button" onclick="larRang()" value="Check">
+    <p>The Result is : </p><span id="larRang_result"></span>
+
+    <h3>Transform Number to Hours and Minutes</h3>
+    Number : <input type="text" id="convert"><br><br>
+    <input type="button" onclick="time()" value="Check">
+    <p>The Result is : </p><span id="convert_result"></span>
+
+    <h3>Tugas Pak Yafet</h3>
+    Number 1 : <input type="text" id="angka1"><br><br>
+    Number 2 : <input type="text" id="angka2"><br><br>
+    Operator : <ul><input type="radio" id="op1" name="operasi" value="tambah">
+                <label for="op1">Tambah</label><br>
+                <input type="radio" id="op2" name="operasi" value="kurang">
+                <label for="op2">Kurang</label><br>
+                <input type="radio" id="op3" name="operasi" value="kali">
+                <label for="op3">Kali</label><br>
+                <input type="radio" id="op4" name="operasi" value="bagi">
+                <label for="op4">Bagi</label><br></ul>
+    <input type="button" onclick="perhitungan()" value="Gass">
+    <p>The Result is : </p><span id="hasil_bos"></span>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <style>
+        :root {
+            scale: 1.3;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+        }
+        #judul {
+            justify-content: center;
+            align-items: center;
+            color: rgb(43, 195, 226);
+            text-shadow: 1px 1px 2px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        ul {
+            list-style-type: none;   
+            padding: 0;              
+            margin: 0;               
+        }
+
+        li a {
+            text-decoration: none;  
+            color: black;           
+            font-size: 14px;         
+            display: block;          
+            padding: 1px;
+        }
+
+    </style>
+</head>
+<body>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <div id="img"></div>
+    <div class="root"></div>
+    <div id="root"></div>
+    <div id="p"></div>
+    <script>
+        const p =  React.createElement('h1', {id: 'judul'}, 'Haii..' );
+        const Element = document.querySelector('.root');
+        ReactDOM.createRoot(Element).render(p);
+
+        const pic = React.createElement('img', {src: 'react.svg'}, null);
+        ReactDOM.render(pic, document.getElementById('img'));
+
+        const nested = React.createElement("div", null, 
+        React.createElement("h1", null, "Jonathan Valentino"),
+        React.createElement("h3", null, "Belajar React Bab 3")
+        );
+        ReactDOM.render(nested, document.getElementById("root"));
+
+         const myMenu = React.createElement('ul', {}, 
+            [
+            React.createElement('li', { key: 'a' },
+                React.createElement('a', { href: 'https://id.wikipedia.org/wiki/Apel' }, 'Apel')
+            ),
+            React.createElement('li', { key: 'b' },
+                React.createElement('a', { href: 'https://id.wikipedia.org/wiki/Pisang' }, 'Pisang')
+            ),
+            React.createElement('li', { key: 'c' },
+                React.createElement('a', { href: 'https://id.wikipedia.org/wiki/Anggur' }, 'Anggur')
+            )
+            ]
+        );
+
+  ReactDOM.render(myMenu, document.getElementById('p'));
+    </script>
+</body>
+</html>

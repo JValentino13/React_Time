@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bab 5 - React Component</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // Functional Component
+    function Hello() {
+      return <h2>Hello dari Functional Component</h2>;
+    }
+
+    // Class Component
+    class HelloClass extends React.Component {
+      render() {
+        return <h2>Hello dari Class Component</h2>;
+      }
+    }
+
+    // Component dengan Props
+    function Greeting(props) {
+      return <p>Halo, {props.name}!</p>;
+    }
+
+    // Component dengan Nested
+    function ProfileCard(props) {
+      return (
+        <div style={{border:"1px solid gray", padding:"10px", margin:"10px", borderRadius:"8px"}}>
+          <h3>{props.title}</h3>
+          <Greeting name={props.name} />
+        </div>
+      );
+    }
+
+    // Component Utama
+    function App() {
+      return (
+        <div>
+          <h1>Belajar React Component</h1>
+          <Hello />
+          <HelloClass />
+          <Greeting name="Valen" />
+          <Greeting name="Jonatan" />
+
+          {/* Nested Component */}
+          <ProfileCard title="User Profile" name="Stefanus" />
+          <ProfileCard title="Admin Profile" name="Okky" />
+        </div>
+      );
+    }
+
+    // Render App
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>
